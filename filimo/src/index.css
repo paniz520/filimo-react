@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "@coreui/coreui/dist/css/coreui.min.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: filimo1;
+    src: url(fonts/IRANSans-web.woff2);
+}
+@font-face {
+    font-family: filimo2;
+    src: url(fonts/IRANSans-Medium-web.woff2);
+}
+:root{
+    --BGColor : #030104;
+}

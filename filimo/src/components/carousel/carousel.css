@@ -1,0 +1,84 @@
+*{
+    margin:0;
+    padding:0
+}
+.main-div{
+    position: relative;
+    display: flex;
+   overflow: hidden;
+   
+}
+.carousel-image{
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.carousel-image img{
+    width: 100%;
+    opacity: 0; /* All images start invisible */
+    transition: opacity 2s ease-in; /* Smooth fade transition */
+
+}
+.carousel-image img.active {
+    opacity: 1; /* Only the active image will be visible */
+  }
+.moveLeft{
+    position:absolute;
+     left:4rem;
+     bottom:12rem;
+    color:white;
+     width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+    font-family:filimo1;
+    border-radius:50%;
+    background-color:rgb(0 0 0 / 82%);
+    
+}
+
+
+.moveRight{
+    position:absolute;
+     left:9rem;
+     bottom:12rem;
+    color:white;
+     width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+    font-family:filimo1;
+    border-radius:50%;
+    background-color:rgb(0 0 0 / 82%);
+}
+@media (max-width: 425px) {
+    .moveLeft{
+    
+    left: 2rem;
+    bottom: 2rem;
+    width: 31px;
+    height: 31px;
+    font-size: 19px;
+    
+    }
+    .moveRight{
+    left: 5rem;
+    bottom: 2rem;
+    color: white;
+    width: 31px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    
+    }
+    .main-div{
+        margin-top: -1rem;
+    }
+    }

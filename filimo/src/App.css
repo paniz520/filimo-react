@@ -1,0 +1,12 @@
+main{
+    max-width: 100vw;
+    height:100vh;
+    
+}
+
+@media (max-width: 425px) {
+      .moveLeft{
+        left:0;
+        bottom:0;
+      }
+}

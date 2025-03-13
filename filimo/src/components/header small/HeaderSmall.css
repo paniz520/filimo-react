@@ -1,0 +1,32 @@
+.scrollable-list {
+  
+    overflow: hidden;
+    height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    background-color: #030104;
+    color: white;
+    transition: overflow 0.6s ease-in; /* Smooth transition */
+  }
+
+  .scrollable-list:hover {
+    overflow-x: auto; /* Show scrollbar on hover */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  }
+
+  /* Optional: Custom scrollbar styling */
+  .scrollable-list::-webkit-scrollbar {
+    height: 4px; /* Height of horizontal scrollbar */
+  }
+
+  .scrollable-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); /* Thumb color */
+    border-radius: 10px; /* Rounded edges */
+  }
+
+  .scrollable-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Track color */
+  }
