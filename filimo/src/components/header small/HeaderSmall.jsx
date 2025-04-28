@@ -2,7 +2,16 @@ import { FaUser } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
 import logo from "../.././images/filimoLogo.png";
 import './HeaderSmall.css'
+import { useContext , useState} from "react";
+import { userContext } from "../../context/userContext";
+import LoginInfo from "../loginInfo/LoginInfo";
+
 export default function HeaderSmall(){
+    const[userInfo, setUserInfo] =useState(false)
+    const{isLoggedIn,user ,logOut} = useContext(userContext)
+    const handleUserInfo = ()=> {
+        setUserInfo(!userInfo)
+    }
     return(
         <>
         <div style={{width:"100%"}}> 
@@ -10,12 +19,13 @@ export default function HeaderSmall(){
             justifyContent: "space-between"
         }}>
             <div style={{width:"40%", display:"flex", justifyContent:"space-evenly"}}>
-                <button style={{width:"27px", height:"27px", borderRadius:"50%", border:"1px solid red", backgroundColor:"rgb(71 28 28)", display:"flex", justifyContent:"center", alignItems:"center"}}><FaUser fill="red" /></button>
+                <button onClick={handleUserInfo} style={{width:"27px", height:"27px", borderRadius:"50%", border:"1px solid red", backgroundColor:"rgb(71 28 28)", display:"flex", justifyContent:"center", alignItems:"center"}}><FaUser fill="red" /></button>
 
+                {userInfo && <LoginInfo />}
 
                 <button style={{borderRadius:"5px", fontFamily:"filimo1", fontSize:"0.65rem", padding:".29rem", border:"none",
                 backgroundColor:"rgb(1 149 68", color:"white"
-                }}>خرید اشتراک</button>
+                }}>{isLoggedIn ? `welcome ${user.validUser}` : 'خرید اشتراک'}</button>
             </div>
             <div className="logo" style={{width: "30%", display: "flex", alignItems:"center"}}>
                 <img src={logo} alt="" style={{width:"100%", height: "auto"}}/>

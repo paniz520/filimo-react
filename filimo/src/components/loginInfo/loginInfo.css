@@ -1,0 +1,69 @@
+.main-division {
+    width: 15%;
+    background-color: #212121;
+    position: absolute;
+    top: 4rem;
+    left: 1.5rem;
+    color: white;
+    border: 1px solid rgba(255, 240, 240, .1);
+    box-shadow: .8px .5px 4px 2px #151B1E;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: .9rem;
+    z-index: 30;
+  }
+  
+  
+  
+.active-account{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    font-family: filimo1;
+    gap:.5em;
+    padding: .35em 0;
+}
+.active-account-mobile{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    font-family: filimo1;
+    gap:.5em;
+    padding: .4em 0;
+}
+.my-movie-list{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    font-family: filimo1;
+    gap:.5em;
+    padding: .4em 0;
+}
+@media (max-width: 930px){
+    .main{
+        width: 20%;
+    }
+}
+@media (max-width: 756px){
+    .main{
+        width: 26%;
+        z-index: 10;
+    }
+}
+@media (max-width: 600px){
+    .main{
+        width: 33%;
+        z-index: 10;
+    }
+}
+@media (max-width: 430px){
+    .main{
+        width: 39%;
+        z-index: 10;
+    }
+}

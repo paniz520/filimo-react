@@ -2,39 +2,64 @@ import HeaderLarge from './components/header large/HeaderLarge'
 import HeaderSmall from './components/header small/HeaderSmall'
 import './App.css'
 import Media from "react-media"
-import Carousel from './components/carousel/Carousel'
-
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/home/Home'
+import Login from './pages/login/Login'
+import { useLocation } from "react-router-dom";
+import { useState } from 'react'
+import FullPage from './pages/login/fullPage/fullPage'
+import MyList from './pages/myList/MyList'
+import { ToastContainer } from 'react-toastify';
 
 export default function App(){
-  const array=[
-    "https://goggler.my/wp-content/uploads/2019/12/JM2_INTL_30Sht_BRIDGE_03-e1575889045252.jpg",
-    "https://wallpapersok.com/images/hd/iconic-movie-poster-of-the-big-lebowski-featuring-main-characters-hshqgehyft0ywo7s.jpg",
-    "https://www.wisconsinmommy.com/wp-content/uploads/2024/04/UnsungHero-Poster-Horizontal-scaled.jpg",
-    "https://wallpapersok.com/images/hd/shang-chi-official-movie-poster-kgiycfo4zeh71c5c.jpg"
+  /* here we conditionally render header!! */
+  const location = useLocation();
+  const hideHeaderRoutes = ["/login", "/404"];
 
-]
+  const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
+   const[clicked,setClicked] = useState({}) 
  return(
- 
+ <>
   <main>
-    <div>
-  <Media queries={{
-    small: "(max-width: 425px)",
-    large: "(min-width: 426px)"
-  }}>
-    {matches => (
-      <>
-        {matches.small && <HeaderSmall />}
-        {matches.large && <HeaderLarge />}
-      </>
-    )}
-  </Media>
-  </div>
+  {/*  --------header--------- */}
+  {shouldShowHeader &&       <div>
+        <Media queries={{
+          small: "(max-width: 756px)",
+          large: "(min-width: 757px)"
+        }}>
+          {matches => (
+            <>
+              {matches.small && <HeaderSmall />}
+              {matches.large && <HeaderLarge />}
+            </>
+          )}
+        </Media>
+      </div>}
+
+<Routes>
+  <Route path='/' element={<Home />}></Route>
+  <Route path='/login' element={<Login />}></Route>
+  <Route path='/FullPage' element={<FullPage />}></Route>
+  <Route path='/MyList' element={<MyList />}></Route>
+</Routes>
+
 
   
-    <Carousel urls= {array}/>
-
  
-  </main>
+</main>
+<div >
+<ToastContainer 
+        position="bottom-left" // Change position
+        autoClose={3000}        // Auto close after 3 seconds
+        hideProgressBar={true}  // Hide the progress bar
+        newestOnTop={true}      // Newest toasts appear on top
+        closeButton={false}     // Disable the close button
+        pauseOnHover={false}    // Disable pause when hovering over toast
+        draggable={false}       // Disable dragging
+      
+/>
+</div>
+</>
  )}
 
 

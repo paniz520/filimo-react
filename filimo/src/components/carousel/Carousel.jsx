@@ -44,7 +44,7 @@ export default function Carousel({urls}){
         <div className="main-div"> {/* learn more about */}
             
             {urls.map((url, i) => (
-            <div className="carousel-image"  style={{ transform: `translateX(-${index * 100}%)` }} // Moves carousel images left/right
+            <div className="carousel-image"  key={i} style={{ transform: `translateX(-${index * 100}%)` }} // Moves carousel images left/right
             > 
             <img
               key={i}

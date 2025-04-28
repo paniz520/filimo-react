@@ -1,0 +1,21 @@
+.filter-btn{
+    width: 10.8rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    font-family: filimo2;
+    padding: 0.6em 0.6em;
+    border: 0.7px solid rgb(88, 88, 88);
+    border-radius: 3px;
+}
+.filter-btn:hover{
+    background-color: #505050;
+}
+
+
+@media (max-width : 768px){
+    .filter-btn{
+        width: 100%;
+    }
+}

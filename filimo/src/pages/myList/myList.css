@@ -1,0 +1,11 @@
+.grid-container{
+    margin-top: 4rem;
+    background-color: #151515;
+    height:90vh;
+  width: 100%;
+  padding: 1em 1em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+
+}

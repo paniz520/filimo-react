@@ -2,19 +2,35 @@ import { FaUser } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
 import logo from "../.././images/filimoLogo.png";
 import { VscSearch } from "react-icons/vsc";
+import { BsPlayBtn } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import "./HeaderLarge.css"
+import { useContext, useState } from "react";
+import { userContext } from "../../context/userContext";
+
+import LoginInfo from "../loginInfo/LoginInfo";
+
 export default function HeaderLarge(){
+    const[userInfo, setUserInfo] =useState(false)
+    const{isLoggedIn,user ,logOut} = useContext(userContext)
+    const handleUserInfo = ()=> {
+        setUserInfo(!userInfo)
+    }
     return(
         <>
-                <header style={{width: "100vw", backgroundColor: "rgb(0 0 0 / 82%)", height: "4rem", display:"flex", alignItems:"center",
+                <header style={{width: "100vw", backgroundColor: "rgb(0 0 0 / 82%)", height: "4rem", display:"flex", alignItems:"center", zIndex:"100",
                     justifyContent: "space-between", position:"fixed", top:"0", zIndex:"2"
                     }}>
-                    <div style={{width:"14%", display:"flex", justifyContent:"space-evenly"}}>
-                        <button style={{width:"27px", height:"27px", borderRadius:"50%", border:"1px solid red", backgroundColor:"rgb(71 28 28)", display:"flex", justifyContent:"center", alignItems:"center"}}><FaUser fill="red" /></button>
+                    <div style={{width:"17%", display:"flex", justifyContent:"space-evenly", alignItems:"center"}}>
+                        <button onClick={handleUserInfo} style={{width:"34px", height:"34px", borderRadius:"50%", border:`2px solid ${isLoggedIn ? '#1CB561' : 'red'}`, backgroundColor:isLoggedIn ? '#19381C' : 'rgb(71 28 28)', display:"flex", justifyContent:"center", alignItems:"center", padding:".5em"}} ><FaUser fill={isLoggedIn ? "#1CB561" : "red"} size={14}/></button>
+
+                        {userInfo && <LoginInfo />}
         
-        
-                        <button style={{borderRadius:"5px", fontFamily:"filimo1", fontSize:"0.65rem", padding:".29rem", border:"none",
-                        backgroundColor:"rgb(1 149 68", color:"white"
-                        }}>خرید اشتراک</button>
+                        <Link to="/login" style={{borderRadius:"5px", fontFamily:"filimo1", fontSize:"0.65rem", padding:".6rem 2em", border:"none", textDecoration:'none',
+                        backgroundColor:"#1CB561", color:"white", display:"flex", justifyContent:"space-between", alignItems:"center", gap:"1em"
+                        }}>{isLoggedIn ? `welcome ${user.validUser}` : 'خرید اشتراک'} {!isLoggedIn && <BsPlayBtn size={17}/>}</Link>
+
+                        
                     </div>
                     <ul  style={{width:"60%", display:"flex", justifyContent:"space-evenly", height:"2rem", alignItems:"flex-end",
                     color:"white", gap:"0.9rem", listStyle:"none"

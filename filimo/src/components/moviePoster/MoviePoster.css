@@ -1,0 +1,56 @@
+.container{
+  height:85%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.container .img{
+    width: 100%; /* Make the image take full width */
+    height: 100%; /* Make the image take full height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 5px;
+}
+.title{
+    text-align: right;
+}
+.hoverEffect{
+    position: absolute;
+    top:0;
+    width: 93.4%;
+    height: 100%;
+    background-color: #323232c2;
+    z-index: 2;
+    border-radius: 8px;
+    opacity: 0;
+}
+.hoverEffect:hover{
+    opacity: 1;
+    transition: all .4s;
+}
+.discription{
+    width: 55%;
+    position: absolute;
+    margin: .5em;
+    bottom: 0;
+    right: 0;
+    font-family: filimo2;
+    font-size: 1.1rem;
+    padding:.3em;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
+}
+.year{
+    font-size: .8rem;
+}
+@media (max-width : 425px){
+    .discription{
+        width: 65%;
+    }
+    
+}

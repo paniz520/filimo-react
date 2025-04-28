@@ -6,7 +6,8 @@
     position: relative;
     display: flex;
    overflow: hidden;
-   
+   background-color: rgb(88, 88, 88);
+
 }
 .carousel-image{
     position: relative;
@@ -17,7 +18,7 @@
 .carousel-image img{
     width: 100%;
     opacity: 0; /* All images start invisible */
-    transition: opacity 2s ease-in; /* Smooth fade transition */
+    transition: opacity .5s ease-in; /* Smooth fade transition */
 
 }
 .carousel-image img.active {

@@ -1,0 +1,156 @@
+body{
+    font-family: filimo1;
+}
+.login-container{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin: 0 auto;
+}
+.login-container .first-div{
+    
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   font-family: filimo2;
+}
+.login-container .first-div p{
+    padding: 1.3em;
+    font-weight: 500;
+    color:black;
+}
+.go-back{
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    
+}
+.go-back :link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4em;
+    color:#999999;
+    font-size: .8rem;
+    text-decoration: none;
+}
+.go-back  a{
+    color: #999999;
+}
+.login-section{
+    border-radius: 10px;
+   width: 80%;
+   border: .5px solid #9999998c;
+   margin:1em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   padding:1em;
+}
+.login-section p{
+    margin-left: 3.6em;
+    padding:1em ;
+    font-size: .8rem;
+    font-weight: 500;
+    color: black;
+    text-align: right;
+}
+.login-section form{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 90%;
+    gap: 1em;
+    
+}
+.login-section form input{
+    display: flex;
+    justify-content: end;
+    text-align: right;
+    border: .3px solid #999999a2;
+    outline: none;
+    width: 100%;
+    padding: .9em 2em;
+    border-radius: 6px;
+    font-size: .8rem;
+    font-weight: 500;
+}
+.login-section form input::placeholder{
+    color:#6d6d6d;
+}
+.login-section form button{
+    width: 100%;
+    padding: .7em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1CB561;
+    border-radius: 6px;
+    margin: 1em 0;
+}
+.submit:disabled{
+    background-color: #0d8d46a9;
+}
+.instructions {
+    width: 100%;
+    font-size: 0.7rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap:.8em;
+    position: relative;
+    color:red;
+    text-align: right;
+    justify-content: end;
+    padding:.2em;
+}
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+@media (max-width : 768px){
+    .login-container{
+        width: 90%;
+    }
+    .login-section{
+        width: 80%;
+    }
+    .login-container .first-div p{
+        font-size: 1.3rem;
+    }
+    .login-section p{
+        font-size: .9rem;
+        text-align: right;
+        width: 82%;
+    }
+    .login-section form input{
+        font-size: .9.5rem;
+    }
+
+}
+@media (max-width : 425px){
+    .login-container{
+        width: 90%;
+    }
+    .login-section{
+        width: 89%;
+    }
+    .login-container .first-div p{
+        font-size: 1.1rem;
+    }
+    .login-section p{
+        font-size: .7rem;
+        text-align: right;
+        width: 80%;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .login-section form input{
+        font-size: .7rem;
+    }
+}
